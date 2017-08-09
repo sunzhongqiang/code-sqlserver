@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "projectview",
+        "designer|userClassName": "ProjectViewViewController"
+    },
+    "designerId": "8f3b47b7-b59d-481c-af73-254622a2c9df"
+}

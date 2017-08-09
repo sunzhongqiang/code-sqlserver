@@ -1,0 +1,168 @@
+/*
+ * 
+ *  ${model.comment}Controller 创建于 2016-10-12 11:54:23 版权归作者和作者当前组织所有
+ */
+package ${model.packageName}.web;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.web.servlet.view.RedirectView;
+import org.springframework.web.bind.annotation.RequestHeader;
+
+import ${model.packageName}.service.${model.model}Service;
+import ${model.packageName}.model.${model.model};
+import ${model.packageName}.condition.${model.model}Condition;
+
+/**
+*@Title: ${model.model}Controller
+*@Description: ${model.comment} 的web控制层
+*@author ${model.author}
+*/
+@RestController
+@RequestMapping("/${model.modelL}")
+public class ${project.model.model}Controller{
+	private Log log = LogFactory.getLog(this.getClass());
+	
+	@Resource 
+	private ${model.model}Service ${model.modelL}Service;
+
+    /**
+	 * 跳转至列表页面
+	 * @param pageable ${model.modelL}
+	 * @return
+	 * @author code generator
+     * @date ${date}
+	 */
+	@RequestMapping("/list")
+	public ModelAndView list(${project.model.model}Condition ${model.modelL}Condition, Pageable pageable){		
+	    log.info("${project.model.comment}列表查询");
+		Page<${project.model.model}> ${model.modelL}List=${model.modelL}Service.list(${model.modelL}Condition,pageable);		
+		ModelAndView mv = new ModelAndView("${model.modelL}/list");
+		mv.addObject("page", ${model.modelL}List);
+		mv.addObject("${model.modelL}Condition", ${model.modelL}Condition);
+		return mv;
+	}
+	
+	/**
+	 * 跳转至${project.model.comment}新增页面
+	 * @param pageable
+	 * @return ${project.model.comment}新增页面
+	 * @author code generator
+     * @date ${date}
+	 */
+	@RequestMapping("/add")
+	public ModelAndView add(){
+		log.info("跳到${project.model.comment}添加页面");
+		ModelAndView mv = new ModelAndView("${model.modelL}/form");
+		mv.addObject("${model.modelL}",new ${project.model.model}());
+		return mv;		
+	}
+	
+	/**
+	 * ${project.model.comment}数据保存方法
+	 * @param ${model.modelL}
+	 * @return ${project.model.comment}列表页面
+	 * @author code generator
+     * @date ${date}
+	 */
+	@RequestMapping("/save")
+	public ModelAndView save(${project.model.model} ${model.modelL},String backurl){
+		log.info("${project.model.comment}保存");
+		${model.modelL}Service.save(${model.modelL});
+		ModelAndView mv = new ModelAndView("redirect:"+backurl);
+		return mv;
+	}
+
+	/**
+	 * 跳转至修改页面
+	 * @param page ${model.modelL}
+	 * @return
+	 * @author code generator
+     * @date ${date}
+	 */
+	@RequestMapping("/edit")
+	public ModelAndView edit(${project.model.model} q${project.model.model}){
+		log.info("${project.model.comment}编辑");
+		${project.model.model} ${model.modelL} = ${model.modelL}Service.find(q${project.model.model}.get${pkFieldUp}());
+		ModelAndView mv = new ModelAndView("${model.modelL}/form");
+		mv.addObject("${model.modelL}",${model.modelL});
+		return mv;
+	}
+	
+	/**
+	 * 修改数据方法
+	 * @param page ${model.modelL}
+	 * @return
+	 * @author code generator
+     * @date ${date}
+	 */
+	@RequestMapping("/update")
+	public ModelAndView update(${project.model.model} ${model.modelL},String backurl){
+		log.info("${project.model.comment}更新");
+		${model.modelL}Service.save(${model.modelL});
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("message", "编辑成功");
+		ModelAndView mv = new ModelAndView(new RedirectView(backurl), map);
+		return mv;
+	}
+	
+	/**
+	 * 跳转至详细信息页面
+	 * @param page ${model.modelL}
+	 * @return
+	 * @author code generator
+     * @date ${date}
+	 */ 
+	@RequestMapping("/details")
+	public ModelAndView details(${project.model.model} q${project.model.model}){
+		log.info("${project.model.comment}详细信息");
+		${project.model.model} ${model.modelL} = ${model.modelL}Service.find(q${project.model.model}.get${pkFieldUp}());
+		ModelAndView mv = new ModelAndView("${model.modelL}/details");
+		mv.addObject("${model.modelL}",${model.modelL});
+		return mv;
+	}
+	
+	/**
+	 * 删除数据操作组方法
+	 * @param page ${model.modelL}
+	 * @return
+	 * @author code generator
+     * @date ${date}
+	 */
+	@RequestMapping("/delete")
+	public ModelAndView delete(${project.model.model} ${project.model.model},@RequestHeader("Referer") String referer){
+		log.info("${project.model.comment}删除");
+		${model.modelL}Service.delete(${project.model.model});
+		return new ModelAndView(new RedirectView(referer));
+	}
+	
+#foreach($field in ${project.fieldList})
+#if($field.exists)
+    /**
+     * 跳转至详细信息页面
+     * @param page ${model.modelL}
+     * @return  true or false
+     * @author code generator
+     * @date ${date}
+     */ 
+    @RequestMapping("/${field.field}/exist")
+    @ResponseBody
+    boolean exists${field.fieldUp}(${field.type} ${field.field}){
+        log.info("检测${project.model.comment}是否存在  ${field.field}");
+        return ${model.modelL}Service.exists${field.fieldUp}(${field.field});
+    }
+#end
+#end
+}

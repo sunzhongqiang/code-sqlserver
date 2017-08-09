@@ -1,0 +1,57 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            "\"model\":{}",
+            "}"
+        ],
+        "designer|userAlias": "projectform",
+        "designer|userClassName": "ProjectFormViewModel"
+    },
+    "designerId": "7d8017c8-5b6f-437e-98d3-e0e24a1ae3f8",
+    "cn": [
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "btnText"
+            },
+            "name": "MyFormula",
+            "designerId": "ec348f16-61d3-4de4-a2d3-13d881c4a58e",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "get"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "if(get('model').id){",
+                            "    return \"编辑\";",
+                            "}",
+                            "return \"新增\";"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "607cddae-2319-402f-a65c-a0fe58176ada"
+                }
+            ]
+        }
+    ]
+}

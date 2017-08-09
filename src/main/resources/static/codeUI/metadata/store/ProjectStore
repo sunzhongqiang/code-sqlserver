@@ -1,0 +1,42 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ProjectStore",
+        "model": "Project",
+        "storeId": "ProjectStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "f76c171d-f0b9-47c0-90a1-91212da16658",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy4",
+            "designerId": "33c549b4-a294-4a4c-948d-8133d2816de2",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "content"
+                    },
+                    "name": "MyJsonReader4",
+                    "designerId": "4613ff7b-0c6f-4912-a791-7288fd6bda91"
+                }
+            ]
+        }
+    ]
+}

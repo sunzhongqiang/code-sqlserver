@@ -1,0 +1,74 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "{",
+            "\"type\": \"any\",",
+            "\"value\": \"模糊匹配\"",
+            "},",
+            "{",
+            "\"type\": \"eq\",",
+            "\"value\": \"精确匹配\"",
+            "},",
+            "{",
+            "\"type\": \"none\",",
+            "\"value\": \"非查询条件\"",
+            "},",
+            "{",
+            "\"type\": \"left\",",
+            "\"value\": \"左匹配\"",
+            "},",
+            "{",
+            "\"type\": \"right\",",
+            "\"value\": \"右匹配\"",
+            "},",
+            "{",
+            "\"type\": \"dateRange\",",
+            "\"value\": \"日期范围\"",
+            "},",
+            "{",
+            "\"type\": \"numberRange\",",
+            "\"value\": \"数量范围\"",
+            "}",
+            "]"
+        ],
+        "designer|userClassName": "MatchStore",
+        "storeId": "MatchStore"
+    },
+    "name": "ValidateStore1",
+    "designerId": "368c6ec7-6235-4461-aa05-803c606f77d1",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "type"
+            },
+            "name": "MyField20",
+            "designerId": "0e9a1c05-b13c-4801-9c1d-83ecfb1fe2c8"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "name": "MyField21",
+            "designerId": "a5285359-38da-4b89-96f5-287d1d03fbcf"
+        }
+    ]
+}

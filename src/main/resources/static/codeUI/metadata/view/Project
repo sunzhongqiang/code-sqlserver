@@ -1,0 +1,318 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "project",
+        "designer|userClassName": "Project",
+        "height": null,
+        "store": "ProjectStore",
+        "title": "项目列表",
+        "width": null
+    },
+    "name": "MyGridPanel",
+    "designerId": "d65f1e73-4c29-4bb7-9159-3b44349b956c",
+    "viewControllerInstanceId": "721edb8d-7513-4317-9ef7-4199c11eb595",
+    "viewModelInstanceId": "c83a8840-66ab-4e18-9a10-d29ac9852efd",
+    "cn": [
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable1",
+            "designerId": "1bafd9c3-1524-47d3-bcf4-ce6853921887"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "projectName",
+                "text": "项目名称"
+            },
+            "name": "MyColumn14",
+            "designerId": "69f5b509-ca7d-46b1-8082-a124afb87ec2"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "comment",
+                "text": "中文名"
+            },
+            "name": "MyColumn15",
+            "designerId": "ffb45731-3c83-4113-9bb3-bc8376f34d76"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "databaseName",
+                "text": "数据库名"
+            },
+            "name": "MyColumn16",
+            "designerId": "60f021f9-8dc5-4755-9c6d-a0340b96abee"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "groupPackage",
+                "text": "Group包",
+                "width": 200
+            },
+            "name": "MyColumn18",
+            "designerId": "10dca4f6-7aed-4e9f-bcc6-5ddf8fa65283"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "modulePackage",
+                "text": "Module包",
+                "width": 200
+            },
+            "name": "MyColumn20",
+            "designerId": "ff503e55-bf5e-4d8a-846d-f9974fb319af"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "path",
+                "text": "存储地址",
+                "width": 300
+            },
+            "name": "MyColumn17",
+            "designerId": "958ee94f-6061-4553-96af-c79163fa4ac0"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "description",
+                "text": "项目描述"
+            },
+            "name": "MyColumn19",
+            "designerId": "87a832ad-8349-4c52-a73d-b7ec8a6f12f6"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar1",
+            "designerId": "2951822a-1441-4e90-9fb5-5f85293b4dae",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "打开项目"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "26b3de8b-7ebc-4fb5-928b-fa66564fce7c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "var grid = button.up(\"grid\");",
+                                    "var selection = grid.getSelection();",
+                                    "if(selection.length>0){",
+                                    "    var model = selection[0];",
+                                    "    var layout = Ext.getCmp(\"codeviewport\").getLayout();",
+                                    "    var code = layout.getNext();",
+                                    "    code.getViewModel().set(\"project\",model.getData());",
+                                    "    layout.next();",
+                                    "}else{",
+                                    "    Ext.Msg.alert(\"提示\",\"先选择，在进行项目管理\");",
+                                    "}",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onButtonClick",
+                            "designerId": "95afd955-d3f7-41ef-9240-221f1f3d3b0c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "新项目"
+                    },
+                    "name": "MyButton6",
+                    "designerId": "12ec37ea-f86f-4c92-b496-2a03f9bbda54",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick1",
+                                "implHandler": [
+                                    "     var form = Ext.getCmp(\"projectform\");",
+                                    "     var viewmodel = form.getViewModel();",
+                                    "     viewmodel.set(\"model\",{});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onButtonClick1",
+                            "designerId": "9076a652-171e-4492-a7d7-a0150ede3aa2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "删除项目"
+                    },
+                    "name": "MyButton9",
+                    "designerId": "d93aa182-a168-489d-a543-c05912ba9876",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "deleteProject",
+                                "implHandler": [
+                                    "var grid = button.up(\"grid\");",
+                                    "var selection = grid.getSelection();",
+                                    "if(selection.length>0){",
+                                    "    Ext.Msg.confirm(\"警告\",\"谨慎删除警告\",function(btn){",
+                                    "        if(btn=='yes'||btn=='ok'){",
+                                    "            var model = selection[0];",
+                                    "            var id = model.get(\"id\");",
+                                    "            Ext.Ajax.request({",
+                                    "                url:SERVER+'/project/delete',",
+                                    "                params:{id:id},",
+                                    "                success:function(){",
+                                    "                    Ext.getStore(\"ProjectStore\").reload();",
+                                    "                }",
+                                    "            });",
+                                    "        }",
+                                    "    });",
+                                    "}else{",
+                                    "    Ext.Msg.alert(\"提示\",\"先选择，后删除\");",
+                                    "}",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "deleteProject",
+                            "designerId": "93a910e1-a75d-4806-a188-744a52be31e7"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Paging",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayInfo": true,
+                "dock": "bottom",
+                "store": "ProjectStore",
+                "width": 360
+            },
+            "name": "MyPagingToolbar",
+            "designerId": "cfadeeb3-3165-4135-8bcf-c25dbb363089"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelSelect",
+                "implHandler": [
+                    "var form = Ext.getCmp(\"projectform\");",
+                    "var viewmodel = form.getViewModel();",
+                    "viewmodel.set(\"model\",record.getData());"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "name": "onGridpanelSelect",
+            "designerId": "c94ca045-ab83-42ae-930d-97a345435f8f"
+        }
+    ]
+}

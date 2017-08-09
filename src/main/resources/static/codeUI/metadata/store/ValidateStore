@@ -1,0 +1,86 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"type\": \"number\",",
+            "        \"value\": \"数字类型\"",
+            "    },",
+            "    {",
+            "        \"type\": \"integer\",",
+            "        \"value\": \"数字整形\"",
+            "    },",
+            "    {",
+            "        \"type\": \"date\",",
+            "        \"value\": \"日期类型\"",
+            "    },",
+            "    {",
+            "        \"type\": \"tel\",",
+            "        \"value\": \"电话号码\"",
+            "    },",
+            "    {",
+            "        \"type\": \"mobile\",",
+            "        \"value\": \"手机号码\"",
+            "    },",
+            "    {",
+            "        \"type\": \"url\",",
+            "        \"value\": \"链接地址\"",
+            "    },",
+            "    {",
+            "        \"type\": \"letter\",",
+            "        \"value\": \"字母\"",
+            "    },",
+            "    {",
+            "        \"type\": \"letterAndNumber\",",
+            "        \"value\": \"字母和数字\"",
+            "    },",
+            "    {",
+            "        \"type\": \"letterOrNumber\",",
+            "        \"value\": \"字母或者数字\"",
+            "    },",
+            "    {",
+            "        \"type\": \"chinese\",",
+            "        \"value\": \"汉字\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "ValidateStore",
+        "storeId": "ValidateStore"
+    },
+    "name": "TypeStore2",
+    "designerId": "99f74d05-adf9-4d54-8ef8-b3afe950d45d",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "type"
+            },
+            "name": "MyField20",
+            "designerId": "07f467db-f348-486c-9088-f92f396896ea"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "name": "MyField21",
+            "designerId": "67035c6e-fed6-4af7-a06a-bd373030b035"
+        }
+    ]
+}

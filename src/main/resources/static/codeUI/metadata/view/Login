@@ -1,0 +1,88 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "container|align": "middle",
+        "container|pack": "center",
+        "designer|userAlias": "login",
+        "designer|userClassName": "Login",
+        "height": null,
+        "layout": "hbox",
+        "title": "登记签名",
+        "width": null
+    },
+    "name": "MyForm2",
+    "designerId": "100b5eac-17d3-4390-8b78-44b8393a1d61",
+    "viewControllerInstanceId": "8b653990-1c9c-44f1-afb0-15858017a55b",
+    "viewModelInstanceId": "bf51b9c5-6a15-46c0-a228-0f0431c38c4e",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "输入您的姓名",
+                "name": "username",
+                "value": [
+                    "codegenerator"
+                ]
+            },
+            "name": "MyTextField15",
+            "designerId": "5c9ab371-8bc4-449f-9c5e-3499f12e5898"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "text": "进入项目管理"
+            },
+            "name": "MyButton4",
+            "designerId": "22bfa205-d81a-41cd-8373-55359ff5bf7b",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonClick",
+                        "implHandler": [
+                            "var username = button.up(\"form\").getValues()[\"username\"];",
+                            "Ext.Ajax.request({",
+                            "    url:SERVER+'/user/sign',",
+                            "    params:{username:username},",
+                            "    success:function(){",
+                            "        Ext.getStore(\"ProjectStore\").load({url:SERVER+'/project/list'});",
+                            "        Ext.getStore(\"DbStore\").load({url:SERVER+'/db'});",
+                            "        Ext.getCmp(\"codeviewport\").getLayout().next();",
+                            "    },",
+                            "    failure:function(){",
+                            "        Ext.Msg.alert(\"提示\",\"服务不可达\");",
+                            "    }",
+                            "});"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onButtonClick",
+                    "designerId": "675aaca1-a628-407e-8bb8-b43d388c5ed0"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "codeviewport",
+        "designer|userClassName": "CodeViewport",
+        "id": "codeviewport",
+        "itemId": "codeviewport",
+        "layout": "card"
+    },
+    "name": "MyViewport",
+    "designerId": "96437213-4ad9-460f-a5af-01361753dce2",
+    "viewControllerInstanceId": "0ba06a26-4410-4097-b591-d3bd9f2df630",
+    "viewModelInstanceId": "f8d48ce8-55e6-4e7e-b27a-66bdeff3b764",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "login",
+            "designerId": "de14fc41-3eb6-4010-b56f-94a0c8a0fc2b",
+            "masterInstanceId": "100b5eac-17d3-4390-8b78-44b8393a1d61"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "projectview",
+            "designerId": "1cb29035-e2c8-4741-b034-b85204cdc2ae",
+            "masterInstanceId": "db14a046-9c2b-4859-b2ae-86f7c222aab9"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "code",
+            "designerId": "eefbc107-f437-42dd-8652-1f9b6a63bfda",
+            "masterInstanceId": "2e9346f0-81a6-4c79-a5d2-dc81f39a48c5"
+        }
+    ]
+}

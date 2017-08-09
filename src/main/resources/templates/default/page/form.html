@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>修改${project.model.comment}</title>
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
+        <script src="/js/laydate/laydate.js"></script>
+        <script src="/js/jquery-1.8.1.min.js"   type="text/javascript" charset="utf-8"></script>
+        <script src="/js/jquery.validator.js"></script>
+        <script src="/js/zh_CN.js"></script>
+    </head>
+    
+    <body>
+        <div class="container amn_add">
+            <div class="headtt">
+                <h1>修改${project.model.comment}</h1>            
+            </div>
+            <div class="role_tit"></div>            
+            <form id="ad-form" class="form_add"  enctype="multipart/form-data" method="post" action="/${project.model.modelL}/update" data-validator-option="{theme:'yellow_right_effect',stopOnError:true}">
+                <table cellspacing="1" cellpadding="3" class="tbbox" >
+#foreach( $field in $project.fieldList )
+#if( $field.isPk != "Y")
+                    <tr>
+#if( $field.type == "Date")
+                        <td class="tdTit">#if(!$field.nullable)<strong class="red" >*</strong>#end<label>${field.comment}：</label></td>
+                        <td><input id="" name="${field.field}" type="text" class="td_input require" readonly="readonly" onfocus="WdatePicker();" th:value="${${project.model.modelL}.${field.field}}"/></td>
+#else
+                        <td class="tdTit">#if(!$field.nullable)<strong class="red" >*</strong>#end<label>${field.comment}：</label></td>
+                        <td>
+#if(${field.inputType}=="input")
+                        <input type="text"  name="${field.field}"    class="td_input require" th:value="${${project.model.modelL}.${field.field}}"/>
+#elseif(${field.inputType}=="hidden")
+                        <input type="hidden"  name="${field.field}"   th:value="${${project.model.modelL}.${field.field}}"/>
+#elseif(${field.inputType}=="textarea")
+                        <textarea id="" name="${field.field}"   th:text="${${project.model.modelL}.${field.field}}"></textarea>
+#elseif(${field.inputType}=="checkbox")
+                        <input type="checkbox"  name="${field.field}"   th:value="${${project.model.modelL}.${field.field}}"/>
+#elseif(${field.inputType}=="radio")
+                        <input type="radio"  name="${field.field}"   th:value="${${project.model.modelL}.${field.field}}"/>
+#elseif(${field.inputType}=="date")
+                        <input id="" name="${field.field}" type="text" class="td_input require" readonly="readonly" onfocus="WdatePicker();" th:value="${${project.model.modelL}.${field.field}}"/>
+#elseif(${field.inputType}=="file")
+                        <input type="file"  name="${field.field}"   th:value="${${project.model.modelL}.${field.field}}"/>
+#end
+                        </td>
+#end
+                    </tr>
+#end
+#end
+                    <tr>
+                        <td class="tdTit"></td>
+                        <td class="top60">
+                            <input type="hidden" name="${pkField}" th:value="${${project.model.modelL}.${pkField}}"/>
+                            <input type="hidden" name="backurl" th:value="${#httpServletRequest.getHeader('Referer')}"/>
+                            <input class="btn_sbt" type="submit" value="提交" />
+                            <a href="/${project.model.modelL}/list" class="btn_back">返回</a>                        
+                       </td>
+                    </tr>
+                </table>
+            </form>
+            
+        </div>
+        <script type="text/javascript" src="/js/${project.model.modelL}/form.js"></script>
+    </body>
+</html>

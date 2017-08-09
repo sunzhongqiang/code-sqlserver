@@ -1,0 +1,53 @@
+/*
+ *  ${model.model}Repository 创建于 ${date} 版权归作者和作者当前组织所有
+ */
+package ${model.packageName}.${model.modulePackage}.dao;
+
+import java.util.Date;
+import java.util.List;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.jpa.repository.JpaRepository;
+import ${model.packageName}.${model.modulePackage}.model.${model.model};
+
+/**
+* ${model.model}Repository: ${model.comment} 数据资源层
+* ${date}
+* @author ${model.author}
+* @version 1.0
+*/
+public interface ${model.model}Repository extends JpaRepository<${model.model}, ${PK}>{
+
+#foreach($field in ${fieldList})
+#if($field.existsMethod||$field.findBy)
+    /**
+     *  根据给定的字段：${field.field} ${field.comment}返回符合条件的第一个对象
+     * @param ${field.field} ${field.comment}
+     * @return 符合条件的唯一对象
+     * @author ${model.author}
+     * 
+     */
+    ${model.model} findFirstBy${field.fieldUp}(${field.type} ${field.field});
+#end
+#if($field.findAllBy)
+    /**
+     *  根据给定的字段：${field.field} ${field.comment}获取所有符合的记录
+     * @param ${field.field} ${field.comment}
+     * @return 符合条件的所有对象
+     * @author ${model.author}
+     * 
+     */
+    List<${model.model}> findAllBy${field.fieldUp}(${field.type} ${field.field});
+    /**
+     *  根据给定的字段：${field.field} ${field.comment}所有符合的记录
+     * @param ${field.field} ${field.comment}
+     * @param pageable 分页参数
+     * @return 符合条件的所有对象
+     * @author ${model.author}
+     * 
+     */
+    Page<${model.model}> findAllBy${field.fieldUp}(${field.type} ${field.field},Pageable pageable);
+#end
+#end
+
+}

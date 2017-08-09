@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>错误页面</title>
+</head>
+<style>
+.error_404{margin: 0px auto;width: 810px;margin-top:100px;}
+.error_lf{display: block;float: left;height:500px;margin: 41px 0px 0px;position: relative;width: 400px;}
+.errorNumber{background: transparent url("/images/404.png") no-repeat scroll left top;display: block;float: left;width:390px;height:497px;text-indent: -9999px;}
+.error_rg{display: block;float: right;height: 200px;margin: 230px 0px 31px;width: 410px;}
+.mes_01{font-size:30px;font-weight:bold;color:#3d4956;}
+.mes_02{font-size:20px; color:#3d4956;}
+.trymessages a{ text-decoration:none;margin-left: 20px;border-radius:5px;padding:10px 60px; text-align:center; list-style:none;font-size:30px;color:#fff;background:#597290;}
+
+</style>
+<body>
+	<div class="error_404">
+		<div class="error_lf">
+			<div class="errorNumber"><span th:text="${status}"></span></div>
+		</div>
+		<div class="error_rg">
+        	<div class="trymessages">
+				<p class="mes_01">sorry <span th:text="${message}"></span></p>
+				<p class="mes_02"><span th:text="${error}"></span></p>
+				<p class="mes_02">您可以通过以下方式继续访问......</p>
+				<a href="/login">返回首页</a>
+			</div>
+        </div>
+	</div>
+
+</body>
+</html>

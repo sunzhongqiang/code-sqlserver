@@ -1,0 +1,105 @@
+package ${model.packageName}.${model.modulePackage}.service.impl;
+
+import javax.annotation.Resource;
+import java.util.Date;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import com.mmk.gene.service.impl.BaseServiceImpl;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import ${model.packageName}.${model.modulePackage}.dao.${model.model}Repository;
+import ${model.packageName}.${model.modulePackage}.model.${model.model};
+import ${model.packageName}.${model.modulePackage}.condition.${model.model}Condition;
+import ${model.packageName}.${model.modulePackage}.service.${model.model}Service;
+import ${model.packageName}.${model.modulePackage}.dao.${model.model}Dao;
+/**
+* ${model.model}ServiceImpl: ${model.comment} 业务服务层实现
+* ${date}
+* @author ${model.author}
+* @version 1.0
+*/
+@Service
+public class ${model.model}ServiceImpl extends BaseServiceImpl<${model.model}, ${PK}> implements ${model.model}Service {
+
+    private Log log = LogFactory.getLog(this.getClass());
+    @Resource
+    private ${model.model}Dao ${model.modelL}Dao;
+    
+    private ${model.model}Repository ${model.modelL}Repository;
+    /**
+    *构造方法
+    * @param ${model.modelL}Repository 数据容器
+    */
+    @Autowired
+    public ${model.model}ServiceImpl( ${model.model}Repository ${model.modelL}Repository) {
+        super(${model.modelL}Repository);
+        this.${model.modelL}Repository = ${model.modelL}Repository;
+    }
+
+    @Override
+    public Page<${model.model}> list(${model.model}Condition ${model.modelL}Condition, Pageable pageable) {
+        log.info("${model.comment}查询列表");
+        return ${model.modelL}Dao.list(${model.modelL}Condition, pageable);
+    }
+    
+    @Override
+    public List<${model.model}> list(${model.model}Condition ${model.modelL}Condition) {
+        log.info("${model.comment}查询列表无分页");
+        return ${model.modelL}Dao.list(${model.modelL}Condition);
+    }
+
+#foreach($field in ${fieldList})
+#if($field.existsMethod)
+    /**
+     * 是否存在该
+     * @param ${field.field} ${field.comment}
+     * @return 如果存在的话返回true ,没有的返回false
+     */
+    @Override
+    public boolean exists${field.fieldUp}(${field.type} ${field.field}){
+        return ${model.modelL}Repository.findFirstBy${field.fieldUp}(${field.field})!=null;
+    }
+#end
+#if($field.findBy)
+    /**
+     * 根据给定的字段返回符合的对象
+     * @param ${field.field} ${field.comment}
+     * @return 符合条件的唯一对象
+     */
+    @Override
+    public ${model.model} findBy${field.fieldUp}(${field.type} ${field.field}){
+         return ${model.modelL}Repository.findFirstBy${field.fieldUp}(${field.field});
+    }
+#end
+#if($field.findAllBy)
+    /**
+     * 根据字段获取所有符合的记录
+     * @param ${field.field} ${field.comment}
+     * @return 符合条件的所有对象
+     */
+    @Override
+    public List<${model.model}>  findAllBy${field.fieldUp}(${field.type} ${field.field}){
+        return ${model.modelL}Repository.findAllBy${field.fieldUp}(${field.field});
+    }
+    
+     @Override
+    public Page<${model.model}>  findAllBy${field.fieldUp}(${field.type} ${field.field}, Pageable pageable){
+        return ${model.modelL}Repository.findAllBy${field.fieldUp}(${field.field},pageable);
+    }
+#end
+#end
+    @Override 
+    public ${model.model} findBy(String field,Object value){
+        log.info("${model.comment}根据字["+field+"="+value+"] 进行查询符合条件的唯一值");
+        return ${model.modelL}Dao.findBy(field,value);
+    }
+    
+    @Override 
+    public List<${model.model}> findAllBy(String field,Object value){
+        log.info("${model.comment}根据字["+field+"="+value+"] 进行查询符合条件的所有记录");
+        return ${model.modelL}Dao.findAllBy(field,value);
+    }
+}

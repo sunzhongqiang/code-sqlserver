@@ -1,0 +1,104 @@
+package ${project.group}.${project.module}.service.impl;
+
+import javax.annotation.Resource;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import com.echin.base.service.impl.BaseServiceImpl;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import ${project.group}.${project.module}.dao.${project.model.model}Repository;
+import ${project.group}.${project.module}.model.${project.model.model};
+import ${project.group}.${project.module}.condition.${project.model.model}Condition;
+import ${project.group}.${project.module}.service.${project.model.model}Service;
+import ${project.group}.${project.module}.dao.${project.model.model}Dao;
+/**
+*@Title: ${project.model.model}ServiceImpl
+*@Description: ${project.model.comment} 业务服务层实现
+*@author code generator
+*@version 1.0
+*@date ${date}
+*/
+@Service
+public class ${project.model.model}ServiceImpl extends BaseServiceImpl<${project.model.model}, ${PK}> implements ${project.model.model}Service {
+
+    private Log log = LogFactory.getLog(this.getClass());
+    @Resource
+    private ${project.model.model}Dao ${project.model.modelL}Dao;
+    
+    private ${project.model.model}Repository ${project.model.modelL}Repository;
+    /**
+    *构造方法
+    */
+    @Autowired
+    public ${project.model.model}ServiceImpl( ${project.model.model}Repository ${project.model.modelL}Repository) {
+        super(${project.model.modelL}Repository);
+        this.${project.model.modelL}Repository = ${project.model.modelL}Repository;
+    }
+
+    @Override
+    public Page<${project.model.model}> list(${project.model.model}Condition ${project.model.modelL}Condition, Pageable pageable) {
+        log.info("${project.model.comment}查询列表");
+        return ${project.model.modelL}Dao.list(${project.model.modelL}Condition, pageable);
+    }
+    
+    @Override
+    public List<${project.model.model}> list(${project.model.model}Condition ${project.model.modelL}Condition) {
+        log.info("${project.model.comment}查询列表无分页");
+        return ${project.model.modelL}Dao.list(${project.model.modelL}Condition);
+    }
+
+#foreach($field in ${project.fieldList})
+#if($field.exists)
+    /**
+     * 是否存在该
+     * @param ${field.field} ${field.comment}
+     * @return 如果存在的话返回true ,没有的返回false
+     */
+    @Override
+    public boolean exists${field.fieldUp}(${field.type} ${field.field}){
+        return ${project.model.modelL}Repository.findFirstBy${field.fieldUp}(${field.field})!=null;
+    }
+#end
+#if($field.findBy)
+    /**
+     * 根据给定的字段返回符合的对象
+     * @param ${field.field} ${field.comment}
+     * @return 符合条件的唯一对象
+     */
+    @Override
+    public ${project.model.model} findBy${field.fieldUp}(${field.type} ${field.field}){
+         return ${project.model.modelL}Repository.findFirstBy${field.fieldUp}(${field.field});
+    }
+#end
+#if($field.findAllBy)
+    /**
+     * 根据字段获取所有符合的记录
+     * @param ${field.field} ${field.comment}
+     * @return 符合条件的所有对象
+     */
+    @Override
+    public List<${project.model.model}>  findAllBy${field.fieldUp}(${field.type} ${field.field}){
+        return ${project.model.modelL}Repository.findAllBy${field.fieldUp}(${field.field});
+    }
+    
+     @Override
+    public Page<${project.model.model}>  findAllBy${field.fieldUp}(${field.type} ${field.field}, Pageable pageable){
+        return ${project.model.modelL}Repository.findAllBy${field.fieldUp}(${field.field},pageable);
+    }
+#end
+#end
+    @Override 
+    public ${project.model.model} findBy(String field,Object value){
+        log.info("${field.comment} 根据字["+field+"="+value+"] 进行查询符合条件的唯一值");
+        return ${project.model.modelL}Dao.findBy(field,value);
+    }
+    
+    @Override 
+    public List<${project.model.model}> findAllBy(String field,Object value){
+        log.info("${field.comment} 根据字["+field+"="+value+"] 进行查询符合条件的所有记录");
+        return ${project.model.modelL}Dao.findAllBy(field,value);
+    }
+}

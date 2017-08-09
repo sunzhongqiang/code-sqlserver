@@ -1,0 +1,67 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "projectview",
+        "designer|userClassName": "ProjectView",
+        "height": null,
+        "layout": "border",
+        "title": "",
+        "width": null
+    },
+    "name": "MyPanel17",
+    "designerId": "db14a046-9c2b-4859-b2ae-86f7c222aab9",
+    "viewControllerInstanceId": "8f3b47b7-b59d-481c-af73-254622a2c9df",
+    "viewModelInstanceId": "2eb0f00f-f9b8-44ca-8410-5e51b1b65e54",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 3,
+                "layout|region": "center"
+            },
+            "name": "project",
+            "designerId": "b5a6e486-04a4-4619-b718-c845bab469b9",
+            "masterInstanceId": "d65f1e73-4c29-4bb7-9159-3b44349b956c"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 2,
+                "layout|region": "west",
+                "layout|split": true,
+                "width": null
+            },
+            "name": "projectform",
+            "designerId": "51d08f80-f3d6-469f-8ce4-fc546ae1dec1",
+            "masterInstanceId": "54de5fc3-109d-4336-a6c5-42010b9bdca8"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "designerId": "f8d6ab99-f4c6-43c1-aaea-80e8af5caaf2"
+        }
+    ]
+}

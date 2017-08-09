@@ -1,0 +1,1551 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "code",
+        "designer|userClassName": "Code",
+        "layout": "border"
+    },
+    "name": "MyPanel16",
+    "designerId": "2e9346f0-81a6-4c79-a5d2-dc81f39a48c5",
+    "viewControllerInstanceId": "3eecb58f-5a0b-4146-a927-e5f8afa0fb12",
+    "viewModelInstanceId": "e208df5d-5530-43d9-9e94-0c741e426c3f",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "layout|region": "center",
+                "layout|split": true
+            },
+            "name": "MyTabPanel",
+            "designerId": "4193f6c2-5ac4-4a2b-b122-c8e348e782b5",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyBorder": false,
+                        "container|align": "stretch",
+                        "height": 494,
+                        "layout": "vbox",
+                        "title": "字段数据"
+                    },
+                    "name": "MyPanel3",
+                    "designerId": "b00cfacb-d075-4e2e-80c1-3a3ab74ed73a",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig",
+                            "designerId": "a6246e7d-b50d-43fe-a7e7-19f704320bbc"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "reference": "data",
+                                "store": "ColumnStore",
+                                "title": "属性字段",
+                                "width": 150
+                            },
+                            "name": "MyGridPanel1",
+                            "designerId": "567951f3-6df9-44d1-8f96-0d22fd3fdca1",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "isPk",
+                                        "text": "主键"
+                                    },
+                                    "name": "MyColumn2",
+                                    "designerId": "ef00cd44-663a-4ae3-9825-1e783ba7c85d"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "columnName",
+                                        "text": "表字段",
+                                        "width": 150
+                                    },
+                                    "name": "MyColumn1",
+                                    "designerId": "3f7ce0d7-9321-498e-9a9f-3539f09b7d4f"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "field",
+                                        "text": "实体字段",
+                                        "width": 150
+                                    },
+                                    "name": "MyColumn4",
+                                    "designerId": "3e5172ef-b39b-4531-b172-4f232c00d355",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyTextField6",
+                                            "designerId": "26a423f4-fc39-4d7d-a1dc-ab4cfb18b6b8"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "DATA_TYPE",
+                                        "text": "表类型"
+                                    },
+                                    "name": "MyColumn3",
+                                    "designerId": "edd1e5e9-1ff2-4458-83c8-85999255ce3d"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "type",
+                                        "text": "实体类型"
+                                    },
+                                    "name": "MyColumn",
+                                    "designerId": "92481cdd-fb8b-47d9-aa25-8b5ea59d3391",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "displayField": "dateType",
+                                                "store": "TypeStore",
+                                                "valueField": "dateType"
+                                            },
+                                            "name": "MyComboBox2",
+                                            "designerId": "52596d2e-58ea-491f-b4af-ffc554540154"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Check",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "nullable",
+                                        "text": "可为空"
+                                    },
+                                    "name": "MyCheck4",
+                                    "designerId": "3b7483d1-1efb-43f1-a464-43068008a24e"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "length",
+                                        "text": "最大长度"
+                                    },
+                                    "name": "MyColumn6",
+                                    "designerId": "df090c39-967c-4e95-954f-12f4eee73d5f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyNumberField",
+                                            "designerId": "5bf06338-56e9-419a-8200-607278c8e513"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "comment",
+                                        "text": "备注 "
+                                    },
+                                    "name": "MyColumn7",
+                                    "designerId": "4a43a191-6e9a-45a8-a3f3-9cd2eb03c88b",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "blankText": "必须填写注释",
+                                                "msgTarget": "under",
+                                                "validateBlank": true
+                                            },
+                                            "name": "MyTextField",
+                                            "designerId": "ea53a17e-79fd-4237-a989-816293cf2316"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.view.Table",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 465
+                                    },
+                                    "name": "MyTable",
+                                    "designerId": "df4dd410-a119-47dd-81bd-b81f4714f907"
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.CellEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyCellEditingPlugin",
+                                    "designerId": "726a1c3b-5843-4499-ae96-d1b77215019c"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "特殊方法"
+                                    },
+                                    "name": "MyColumn8",
+                                    "designerId": "ba29c765-296a-4b44-9781-f5d176ab73e6",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Check",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "existsMethod",
+                                                "text": "exists"
+                                            },
+                                            "name": "MyCheck",
+                                            "designerId": "6383c4e9-ef47-42b2-a618-7b31cfbbab61",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Checkbox",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyCheckbox",
+                                                    "designerId": "71f33eb0-a2f9-4580-9b52-aedc24f7cc4a"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Check",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "findBy",
+                                                "text": "findBy"
+                                            },
+                                            "name": "MyCheck1",
+                                            "designerId": "13234e59-470a-4722-80a6-6a3638a9375c"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Check",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "findAllBy",
+                                                "text": "findAllBy"
+                                            },
+                                            "name": "MyCheck2",
+                                            "designerId": "2b4d3255-152c-4968-a850-5cf9aff5ea82"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "查询页面"
+                                    },
+                                    "name": "MyColumn9",
+                                    "designerId": "eef4d83e-3ef4-4cbf-b384-3691998369c0",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Check",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "listShow",
+                                                "text": "列表显示"
+                                            },
+                                            "name": "MyCheck3",
+                                            "designerId": "50eab4e1-09d3-4af4-83a1-ff128d40a294",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Checkbox",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "inputValue": "true"
+                                                    },
+                                                    "name": "MyCheckbox1",
+                                                    "designerId": "e11e9b59-dd06-4306-9718-e3e0bd9e993e"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "matchType",
+                                                "text": "查询匹配方式"
+                                            },
+                                            "name": "MyColumn10",
+                                            "designerId": "26c29b0a-d152-43e7-8ccf-8e098b8ce861",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "displayField": "value",
+                                                        "store": "MatchStore",
+                                                        "valueField": "type"
+                                                    },
+                                                    "name": "MyComboBox4",
+                                                    "designerId": "b5a5c3d4-20fa-4ca3-bf18-640fe99280d3",
+                                                    "cn": [
+                                                        {
+                                                            "type": "viewcontrollereventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "validateChange",
+                                                                "name": "change",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "validateChange",
+                                                            "designerId": "3a1d5483-6c69-4759-b0bb-063769342df7"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "编辑页面"
+                                    },
+                                    "name": "MyColumn11",
+                                    "designerId": "8fd975a5-4972-4736-8c30-7c00b0a8a129",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "validate",
+                                                "text": "字段校验"
+                                            },
+                                            "name": "MyColumn12",
+                                            "designerId": "eb6e01d8-71f0-4f7d-848c-b544a5afb01e",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "displayField": "value",
+                                                        "store": "ValidateStore",
+                                                        "valueField": "type"
+                                                    },
+                                                    "name": "MyComboBox3",
+                                                    "designerId": "1d996dd1-343d-4892-b627-2ab3161c3dc6"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "inputType",
+                                                "text": "字段类型"
+                                            },
+                                            "name": "MyColumn13",
+                                            "designerId": "906c3601-f4c8-406f-84ad-40b86906ce74",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "editor",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "displayField": "inputType",
+                                                        "store": "InputTypeStore",
+                                                        "valueField": "inputType"
+                                                    },
+                                                    "name": "MyComboBox1",
+                                                    "designerId": "76e3b78c-d47e-4f69-89c8-8a3c0829d7fb"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "id",
+                                        "hidden": true,
+                                        "text": "ID"
+                                    },
+                                    "name": "MyColumn5",
+                                    "designerId": "185bb043-b73e-4664-8789-109bbade8033"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "name": "MyToolbar3",
+                                    "designerId": "6947a40a-a07d-426a-8948-b9a72ad51f98",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "text": "数据字典导出"
+                                            },
+                                            "name": "MyButton10",
+                                            "designerId": "24c60153-bf48-4f86-8655-07972bbee22d",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onButtonClick",
+                                                        "implHandler": [
+                                                            "Ext.Msg.alert(\"尚未实现\",\"尚未实现\");"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onButtonClick",
+                                                    "designerId": "93521c5f-b298-4784-a2a5-23723a57e5d7"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "TABLE_NAME",
+                "layout|region": "west",
+                "layout|split": true,
+                "rootVisible": false,
+                "store": "TableTreeStore",
+                "title": "数据库表",
+                "width": 175
+            },
+            "name": "MyTreePanel",
+            "designerId": "cf2828cd-470d-4cf8-81f0-d5377ba5a114",
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootVisible": false
+                    },
+                    "name": "MyTreeView",
+                    "designerId": "c1e0c3b2-ad73-4045-9472-630dff7f8929"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "loadColumn",
+                        "implHandler": [
+                            "",
+                            "var model = this.getViewModel();",
+                            "var projectForm = this.lookupReference(\"projectForm\");",
+                            "var projectId = projectForm.getValues().id;",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url:SERVER+'/model/info',",
+                            "    params:{'projectId':projectId,'db':record.get(\"TABLE_SCHEMA\"),\"table\":record.get(\"TABLE_NAME\")},",
+                            "    success:function(response){",
+                            "        var text = response.responseText;",
+                            "        var object = Ext.JSON.decode(text);",
+                            "        if(!object.packageName){",
+                            "            object.packageName=model.get(\"project\").groupPackage;",
+                            "        }",
+                            "        if(!object.modulePackage){",
+                            "            object.modulePackage=model.get(\"project\").modulePackage;",
+                            "        }",
+                            "        model.set(\"model\",object);",
+                            "",
+                            "        var store = Ext.getStore(\"ColumnStore\");",
+                            "        store.getProxy().setExtraParams({modelId:object.id,'db':record.get(\"TABLE_SCHEMA\"),\"table\":record.get(\"TABLE_NAME\")});",
+                            "        store.load();",
+                            "    }",
+                            "});"
+                        ],
+                        "name": "itemclick",
+                        "scope": "me"
+                    },
+                    "name": "loadColumn",
+                    "designerId": "55ad5c15-4989-4d2b-ab5c-aced93a1f14c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|align": "stretch",
+                "height": 202,
+                "layout": "vbox",
+                "layout|region": "north",
+                "layout|split": true,
+                "reference": "projectForm",
+                "title": "项目配置"
+            },
+            "name": "MyForm1",
+            "designerId": "4bf3bb74-d6ab-456e-bda0-473ab7397086",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "middle",
+                        "layout": "hbox",
+                        "layout|flex": null,
+                        "width": 600
+                    },
+                    "name": "MyContainer2",
+                    "designerId": "43f624b0-0ba5-488a-904a-a71cc19c98c7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "模块名不可以为空",
+                                "fieldLabel": "项目名称",
+                                "layout|flex": null,
+                                "msgTarget": "under",
+                                "name": "projectName",
+                                "validateBlank": true,
+                                "value": [
+                                    "{project.projectName}"
+                                ],
+                                "width": 300
+                            },
+                            "name": "MyTextField4",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "2c92b7fa-c9ac-4f90-b9dc-ea07ea30674a"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "项目包不可以为空",
+                                "fieldLabel": "GroupPackage",
+                                "layout|flex": null,
+                                "msgTarget": "under",
+                                "name": "groupPackage",
+                                "validateBlank": true,
+                                "value": [
+                                    "{project.groupPackage}"
+                                ],
+                                "width": 300
+                            },
+                            "name": "MyTextField3",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "2e4385a0-3f8d-464e-a14f-b8290a0033ca"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "项目包不可以为空",
+                                "fieldLabel": "ModulePackage",
+                                "layout|flex": null,
+                                "msgTarget": "under",
+                                "name": "modulePackage",
+                                "validateBlank": true,
+                                "value": [
+                                    "{project.modulePackage}"
+                                ],
+                                "width": 300
+                            },
+                            "name": "MyTextField17",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "a348fffc-0b28-405c-aa00-29556c8df809"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "middle",
+                        "height": 40,
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "878bf99e-cc55-4358-a437-9749b0f697f7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "项目路径不可以为空",
+                                "fieldLabel": "项目目录",
+                                "layout|flex": null,
+                                "msgTarget": "under",
+                                "name": "path",
+                                "validateBlank": true,
+                                "value": [
+                                    "{project.path}"
+                                ],
+                                "width": 300
+                            },
+                            "name": "MyTextField2",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "c96cefbb-15e6-41cd-9c62-90f0a979e90e"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "数据名不可以为空",
+                                "displayField": "SCHEMA_NAME",
+                                "fieldLabel": "数据库",
+                                "layout|flex": null,
+                                "name": "databaseName",
+                                "store": "DbStore",
+                                "validateBlank": true,
+                                "value": [
+                                    "{project.databaseName}"
+                                ],
+                                "valueField": "SCHEMA_NAME",
+                                "width": 300
+                            },
+                            "name": "MyComboBox",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "49fe37f6-ff1c-4b27-8faa-3d6fdda2d6c3",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "showTables",
+                                        "implHandler": [
+                                            "Ext.getStore(\"TableTreeStore\").load({params:{\"name\":newValue}});"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "showTables",
+                                    "designerId": "3141248e-cbf4-457c-9cb9-decee5c21e8c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "name",
+                                "fieldLabel": "代码模板",
+                                "layout|flex": null,
+                                "name": "template",
+                                "store": "TemplateStore",
+                                "value": [
+                                    "{project.template}"
+                                ],
+                                "valueField": "code",
+                                "width": 300
+                            },
+                            "name": "MyComboBox7",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "3c957108-8244-4193-a52e-8838583514af"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "middle",
+                        "layout": "hbox",
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "736b9950-1f4f-4920-bcf7-d828cb5b0320",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "中文说明",
+                                "layout|flex": null,
+                                "name": "comment",
+                                "value": [
+                                    "{project.comment}"
+                                ],
+                                "width": 300
+                            },
+                            "name": "MyTextField7",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "035e10de-53d3-4096-b5ca-d70ebd999a0d"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "项目说明",
+                                "layout|flex": null,
+                                "name": "description",
+                                "value": [
+                                    "{project.description}"
+                                ],
+                                "width": 600
+                            },
+                            "name": "MyTextArea",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "1ec9ddb7-52bf-49d2-abc0-70b973f944a5"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "name": "id",
+                                "value": [
+                                    "{project.id}"
+                                ]
+                            },
+                            "name": "MyHiddenField3",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "4626bf3d-5287-4107-9e69-f225b76c27e8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "right",
+                        "layout|flex": null
+                    },
+                    "name": "MyToolbar",
+                    "designerId": "93cb8065-fdec-4d5f-b651-6b3bc6864551",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "项目列表"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "6d79a280-e8f8-4fb3-af43-1cf031ad7bad",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "projectList",
+                                        "implHandler": [
+                                            "Ext.getCmp(\"codeviewport\").getLayout().prev();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "projectList",
+                                    "designerId": "3a318386-f7f5-4983-9242-a97d9be998bb"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "margin": null,
+                                "text": "预览代码",
+                                "width": 100
+                            },
+                            "name": "MyButton1",
+                            "designerId": "e0b267cc-2b63-4aba-932c-cd1abdd0ad86",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "preview",
+                                        "implHandler": [
+                                            "var result = this.buildData();",
+                                            "if(!result.validate){",
+                                            "    Ext.Msg.alert(\"校验出错\",result.message);",
+                                            "    return ;",
+                                            "}",
+                                            "",
+                                            "var projectForm = this.lookupReference(\"projectForm\");",
+                                            "var tableForm = this.lookupReference(\"tableForm\");",
+                                            "var columns = Ext.getStore(\"ColumnStore\").getData();",
+                                            "var fieldList = [];",
+                                            "columns.each(function(item,index,len){",
+                                            "    var field = item.getData();",
+                                            "    if(isNaN(field.id)){",
+                                            "        field.id = null;",
+                                            "    }",
+                                            "    fieldList.push(field);",
+                                            "});",
+                                            "Ext.Ajax.request({",
+                                            "    url:SERVER+'/code/preview',",
+                                            "    jsonData:{project:projectForm.getValues(),model:tableForm.getValues(),fieldList:fieldList},",
+                                            "    success:function(response){",
+                                            "        var text = response.responseText;",
+                                            "        var data = Ext.JSON.decode(text);",
+                                            "        console.log(\"data\",data);",
+                                            "        var window = Ext.widget(\"codeviewwindow\");",
+                                            "        window.getViewModel().setData(data);",
+                                            "        window.show();",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "preview",
+                                    "designerId": "5832c557-6add-4924-af96-f20bf4e058d0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "margin": null,
+                                "text": "页面预览"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "6f148158-7cbc-40f5-a57a-6498e86982c8",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "previewpage",
+                                        "implHandler": [
+                                            "var result = this.buildData();",
+                                            "if(!result.validate){",
+                                            "    Ext.Msg.alert(\"校验出错\",result.message);",
+                                            "    return ;",
+                                            "}",
+                                            "var projectForm = this.lookupReference(\"projectForm\");",
+                                            "var tableForm = this.lookupReference(\"tableForm\");",
+                                            "var columns = Ext.getStore(\"ColumnStore\").getData();",
+                                            "var fieldList = [];",
+                                            "columns.each(function(item,index,len){",
+                                            "    var field = item.getData();",
+                                            "    if(isNaN(field.id)){",
+                                            "        field.id = null;",
+                                            "    }",
+                                            "    fieldList.push(field);",
+                                            "});",
+                                            "Ext.Ajax.request({",
+                                            "    url:'/code/preview',",
+                                            "    jsonData:{project:projectForm.getValues(),model:tableForm.getValues(),fieldList:fieldList},",
+                                            "    success:function(response){",
+                                            "        var text = response.responseText;",
+                                            "        var data = Ext.JSON.decode(text);",
+                                            "        var window = Ext.widget(\"pageviewwindow\");",
+                                            "        window.getViewModel().setData(data);",
+                                            "        window.show();",
+                                            "    },",
+                                            "    failure:function(response){",
+                                            "        Ext.Msg.alert(\"提示\",\"服务不可达\");",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "previewpage",
+                                    "designerId": "9ab3b968-2ab0-4abf-9796-fce7d706c76a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "生成",
+                                "value": null,
+                                "width": 100
+                            },
+                            "name": "MyButton",
+                            "designerId": "e78eb3d3-d159-44d5-b192-f1067e7eda20",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "buildCode",
+                                        "implHandler": [
+                                            "",
+                                            "var result = this.buildData();",
+                                            "if(!result.validate){",
+                                            "    Ext.Msg.alert(\"校验出错\",result.message);",
+                                            "    return ;",
+                                            "}",
+                                            "",
+                                            "Ext.Ajax.request({",
+                                            "    url:'/code/builde',",
+                                            "    jsonData:result.params,",
+                                            "    success:function(response){",
+                                            "        Ext.Msg.alert(\"操作结果\",response.responseText);",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "buildCode",
+                                    "designerId": "43271701-d6d1-4855-97dd-ef9283a01b33"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "text": "保存"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "6e182a91-bee6-41ad-8713-62d02d5c0fc6",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "saveBuildInfo",
+                                        "implHandler": [
+                                            "var projectForm = this.lookupReference(\"projectForm\");",
+                                            "var tableForm = this.lookupReference(\"tableForm\");",
+                                            "var columns = Ext.getStore(\"ColumnStore\").getData();",
+                                            "var fieldList = [];",
+                                            "columns.each(function(item,index,len){",
+                                            "    var field = item.getData();",
+                                            "    if(isNaN(field.id)){",
+                                            "        field.id = null;",
+                                            "    }",
+                                            "    fieldList.push(field);",
+                                            "});",
+                                            "Ext.Ajax.request({",
+                                            "    url:SERVER+'/code/save',",
+                                            "    jsonData:{project:projectForm.getValues(),model:tableForm.getValues(),fieldList:fieldList},",
+                                            "    success: function(form, action) {",
+                                            "         Ext.toast({",
+                                            "             html: '数据保存成功',",
+                                            "             title: '成功',",
+                                            "             width: 200,",
+                                            "             align: 'tr'",
+                                            "         });",
+                                            "        Ext.getStore(\"ColumnStore\").reload();",
+                                            "    },",
+                                            "    failure:function(form,action){",
+                                            "         Ext.toast({",
+                                            "             html: '数据保存失败',",
+                                            "             title: '失败',",
+                                            "             width: 200,",
+                                            "             align: 'tr'",
+                                            "         });",
+                                            "    }",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "saveBuildInfo",
+                                    "designerId": "c48c6dd2-122b-4592-9037-68f1c6153149"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "fit",
+                "layout|region": "east",
+                "layout|split": true,
+                "title": "实体信息",
+                "width": 300
+            },
+            "name": "MyPanel15",
+            "designerId": "d238777f-79f2-4afc-b3df-0d2433ca7f29",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "height": null,
+                        "itemId": "myform",
+                        "layout": "vbox",
+                        "reference": "tableForm",
+                        "title": ""
+                    },
+                    "name": "MyForm",
+                    "designerId": "6ec45a83-7293-4d28-b76b-ee69c9486d96",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "表名",
+                                "labelAlign": "right",
+                                "layout|flex": null,
+                                "name": "tableName",
+                                "submitValue": true,
+                                "value": [
+                                    "{model.TABLE_NAME}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyDisplayField",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "c8fd5620-94db-40bd-ba91-7474d877af75"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "当前自增数",
+                                "labelAlign": "right",
+                                "labelWidth": null,
+                                "layout|flex": null,
+                                "name": "AUTO_INCREMENT",
+                                "submitValue": true,
+                                "value": [
+                                    "{model.AUTO_INCREMENT}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyDisplayField2",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "0533c7e1-d1d1-426b-8667-c31a11cc3a58"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "作者",
+                                "labelAlign": "right",
+                                "labelWidth": null,
+                                "layout|flex": null,
+                                "name": "author",
+                                "value": [
+                                    "{model.author}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyTextField9",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "4609ab4c-d103-42e6-99eb-6a75e70d4889"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "必填项",
+                                "fieldLabel": "GroupPackage",
+                                "labelAlign": "right",
+                                "labelWidth": null,
+                                "layout|flex": null,
+                                "name": "packageName",
+                                "value": [
+                                    "{model.packageName}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyTextField8",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "33e9b3e6-8e06-4182-94ed-3a10e624a43e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "必填项",
+                                "fieldLabel": "ModulePackage",
+                                "labelAlign": "right",
+                                "labelWidth": null,
+                                "layout|flex": null,
+                                "name": "modulePackage",
+                                "value": [
+                                    "{model.modulePackage}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyTextField12",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "2e05d5d7-dc3a-48e7-b659-9a8ab3fac9a7"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "实体名不可以为空",
+                                "fieldLabel": "实体类名",
+                                "labelAlign": "right",
+                                "labelWidth": null,
+                                "layout|flex": null,
+                                "msgTarget": "under",
+                                "name": "model",
+                                "validateBlank": true,
+                                "value": [
+                                    "{model.MODEL}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyTextField5",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "5ad6ad7b-bea1-4bd3-8160-302449552678"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "模块名不能为空",
+                                "fieldLabel": "注释",
+                                "labelAlign": "right",
+                                "labelWidth": null,
+                                "layout|flex": null,
+                                "msgTarget": "under",
+                                "name": "comment",
+                                "validateBlank": true,
+                                "value": [
+                                    "{model.TABLE_COMMENT}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyTextField1",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "d26f060f-a8be-452f-a3a0-297f52303a49"
+                        },
+                        {
+                            "type": "Ext.form.field.HtmlEditor",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "模块说明",
+                                "labelAlign": "right",
+                                "labelWidth": null,
+                                "layout|flex": null,
+                                "name": "description",
+                                "value": [
+                                    "{model.description}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyHtmlEditor1",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "9be16c0e-e0dd-4b1d-958b-b9213940ed65"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "layout|flex": 1,
+                                "name": "projectId",
+                                "value": [
+                                    "{model.projectId}"
+                                ]
+                            },
+                            "name": "MyHiddenField1",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "211c5f89-68e7-4f2e-a550-defc81c23882"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "layout|flex": 1,
+                                "name": "id",
+                                "value": [
+                                    "{model.id}"
+                                ]
+                            },
+                            "name": "MyHiddenField2",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "9a5160bd-6fc9-4551-8a87-a25d3576a1be"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

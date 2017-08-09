@@ -1,0 +1,64 @@
+/*
+ * 
+ *  ${model.model} 创建于 ${date} 版权归作者和作者当前组织所有
+ */
+package ${model.packageName}.${model.modulePackage}.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
+#foreach( $key in $importList.keySet() )
+$importList.get($key)
+#end
+
+/**
+* ${model.model}: ${model.comment} 数据领域模型
+* ${date}
+*@author ${model.author}
+*@version 1.0
+*/
+@Entity
+@Table(name="${model.tableName}")
+public class ${model.model} {
+#foreach($field in $fieldList)
+#if(${field.isPk}=='Y')
+    /**
+     * ${field.comment}
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="${field.columnName}",columnDefinition="COMMENT '${field.comment}'")
+    private ${field.type} ${field.field};
+#else
+    /**
+     * ${field.comment}
+     */
+#if(${field.type} == "Date")
+    @Temporal(TemporalType.TIMESTAMP)   
+#end
+    @Column(name="${field.columnName}",columnDefinition="COMMENT '${field.comment}'")
+    private ${field.type} ${field.field};
+#end
+
+#end
+
+#foreach($field in $fieldList)
+    /** 
+	* @return ${field.field} ：${field.comment}
+	*/
+    public ${field.type} get${field.fieldUp}() {
+        return ${field.field};
+    }
+    /** 
+    *@param ${field.field} 设置${field.comment} 
+    */
+    public void set${field.fieldUp}(${field.type} ${field.field}) {
+        this.${field.field} = ${field.field};
+    }
+
+#end
+
+}

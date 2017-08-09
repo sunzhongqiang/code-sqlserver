@@ -1,0 +1,54 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"dateType\": \"String\"",
+            "    },",
+            "    {",
+            "        \"dateType\": \"Long\"",
+            "    },",
+            "    {",
+            "        \"dateType\": \"Date\"",
+            "    },",
+            "    {",
+            "        \"dateType\": \"Double\"",
+            "    },",
+            "    {",
+            "        \"dateType\": \"Integer\"",
+            "    },",
+            "    {",
+            "        \"dateType\": \"Float\"",
+            "    },",
+            "    {",
+            "        \"dateType\": \"Boolean\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "TypeStore",
+        "storeId": "TypeStore"
+    },
+    "name": "MyArrayStore",
+    "designerId": "27aaec04-a37d-4b29-a837-46014b24207e",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "dateType"
+            },
+            "name": "MyField10",
+            "designerId": "703f2352-9fbc-4a50-8899-4fcb6ed15e59"
+        }
+    ]
+}

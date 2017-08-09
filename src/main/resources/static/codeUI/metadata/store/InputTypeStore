@@ -1,0 +1,58 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"inputType\": \"input\"",
+            "    },",
+            "    {",
+            "        \"inputType\": \"hidden\"",
+            "    },",
+            "    {",
+            "        \"inputType\": \"date\"",
+            "    },",
+            "    {",
+            "        \"inputType\": \"textarea\"",
+            "    },",
+            "    {",
+            "        \"inputType\": \"checkbox\"",
+            "    },",
+            "    {",
+            "        \"inputType\": \"radio\"",
+            "    },",
+            "    {",
+            "        \"inputType\": \"htmleditor\"",
+            "    },",
+            "    ",
+            "    {",
+            "        \"inputType\": \"file\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "InputTypeStore",
+        "storeId": "InputTypeStore"
+    },
+    "name": "TypeStore1",
+    "designerId": "3ac4ec8b-547a-42bb-8be2-57c35e8c1a2e",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "inputType"
+            },
+            "name": "MyField10",
+            "designerId": "1cf940dc-a486-45e6-a00b-c282382bdf37"
+        }
+    ]
+}

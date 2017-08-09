@@ -1,0 +1,67 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TableTreeStore",
+        "storeId": "TableTreeStore"
+    },
+    "name": "MyTreeStore",
+    "designerId": "7ac4ad93-de28-460f-a3c2-f6bb4504edc5",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "http://localhost:10001/tables"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "a2e0203e-7cbd-4cb4-a491-12104f77988a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader",
+                    "designerId": "c6f4c9ea-226f-4432-b42f-c0884e0500bd"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "TABLE_NAME"
+            },
+            "name": "MyField3",
+            "designerId": "cf09577d-c6ad-417c-a8c6-9bce02cc4b4f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "TABLE_SCHEMA"
+            },
+            "name": "MyField9",
+            "designerId": "7937961e-7b0f-4a8f-a288-81c53e48a461"
+        }
+    ]
+}

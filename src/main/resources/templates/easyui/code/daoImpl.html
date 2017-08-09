@@ -1,0 +1,217 @@
+/*
+ * 
+ *  ${model.model}DaoImpl 创建于 ${date} 版权归作者和作者当前组织所有
+ */
+package ${model.packageName}.${model.modulePackage}.dao.impl;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.apache.commons.lang3.StringUtils;
+import javax.annotation.Resource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Repository;
+import com.mmk.gene.dao.impl.SpringDataQueryDaoImpl;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import ${model.packageName}.${model.modulePackage}.model.${model.model};
+import ${model.packageName}.${model.modulePackage}.dao.${model.model}Dao;
+
+import ${model.packageName}.${model.modulePackage}.condition.${model.model}Condition;
+
+
+
+/**
+* ${model.model}DaoImpl: ${model.comment} 数据持久层接口实现
+*@author ${model.author}
+*@version 1.0
+*
+*/
+@Repository
+public class ${model.model}DaoImpl extends SpringDataQueryDaoImpl<${model.model}> implements ${model.model}Dao {
+    
+    private Log log = LogFactory.getLog(this.getClass());
+    
+    public ${model.model}DaoImpl(){
+        super(${model.model}.class);
+    }
+    
+    /**
+     * 分页查询相关信息，根据传入的bean类对象和分页对象page取得查询结果集List
+     * @param ${model.modelL}Condition 查询类
+     * @param pageable 传入的分页对象
+     * @return 符合条件的查询结果集
+     * @author ${model.author}
+     * 
+     */
+    @Override 
+    public Page<${model.model}> list(${model.model}Condition ${model.modelL}Condition,Pageable pageable){
+        StringBuffer sb=new StringBuffer("select model from ${model.model} model  where 1=1  ");
+        Map<String,Object> params = new HashMap<String,Object>();
+#foreach($field in $fieldList)
+#if($field.type=="String")
+#if($field.matchType == 'any')
+        if(StringUtils.isNotBlank(${model.modelL}Condition.get${field.fieldUp}())){
+            sb.append(" and model.${field.field} like :${field.field} ");
+            params.put("${field.field}","%"+${model.modelL}Condition.get${field.fieldUp}()+"%");
+        }
+#elseif($field.matchType == 'eq')
+        if(StringUtils.isNotBlank(${model.modelL}Condition.get${field.fieldUp}())){
+            sb.append(" and model.${field.field} = :${field.field} ");
+            params.put("${field.field}",${model.modelL}Condition.get${field.fieldUp}());
+        }
+#elseif($field.matchType == 'left')
+        if(StringUtils.isNotBlank(${model.modelL}Condition.get${field.fieldUp}())){
+            sb.append(" and model.${field.field} like :${field.field} ");
+            params.put("${field.field}",${model.modelL}Condition.get${field.fieldUp}()+"%");
+        }
+#elseif($field.matchType == 'right')
+        if(StringUtils.isNotBlank(${model.modelL}Condition.get${field.fieldUp}())){
+            sb.append(" and model.${field.field} like :${field.field} ");
+            params.put("${field.field}","%"+${model.modelL}Condition.get${field.fieldUp}());
+        }
+#elseif($field.matchType == 'dateRange')
+        if(condition.get${field.fieldUp}Begin()!=null){
+            sb.append(" and ${field.columnName} >= : ${field.columnName}Begin");
+            params.put("${field.columnName}Begin",condition.get${field.fieldUp}Begin());
+        }
+        if(condition.get${field.fieldUp}End()!=null){
+            sb.append(" and ${field.columnName} < ${field.columnName}End ");
+            params.put(${field.columnName}End,condition.get${field.fieldUp}End());
+        }
+#elseif($field.matchType == 'numberRange')
+        if(condition.get${field.fieldUp}Begin()!=null){
+            sb.append(" and ${field.columnName} >= : ${field.columnName}Begin");
+            params.put("${field.columnName}Begin",condition.get${field.fieldUp}Begin());
+        }
+        if(condition.get${field.fieldUp}End()!=null){
+            sb.append(" and ${field.columnName} < ${field.columnName}End ");
+            params.put(${field.columnName}End,condition.get${field.fieldUp}End());
+        }
+        
+#end
+#else
+#if($field.matchType != 'none')
+        if(${model.modelL}Condition.get${field.fieldUp}()!=null){
+            sb.append(" and model.${field.field} = :${field.field} ");
+            params.put("${field.field}",${model.modelL}Condition.get${field.fieldUp}());
+        }
+#end
+#end
+#end
+        return queryByJpql(sb.toString(), params, pageable);
+    }
+
+    @Override 
+    public List<${model.model}> list(${model.model}Condition ${model.modelL}Condition){
+        StringBuffer sb=new StringBuffer("select model from ${model.model} model  where 1=1  ");
+        Map<String,Object> params = new HashMap<String,Object>();
+#foreach($field in $fieldList)
+#if($field.type=="String")
+#if($field.matchType == 'any')
+        if(StringUtils.isNotBlank(${model.modelL}Condition.get${field.fieldUp}())){
+            sb.append(" and model.${field.field} like :${field.field} ");
+            params.put("${field.field}","%"+${model.modelL}Condition.get${field.fieldUp}()+"%");
+        }
+#elseif($field.matchType == 'eq')
+        if(StringUtils.isNotBlank(${model.modelL}Condition.get${field.fieldUp}())){
+            sb.append(" and model.${field.field} = :${field.field} ");
+            params.put("${field.field}",${model.modelL}Condition.get${field.fieldUp}());
+        }
+#elseif($field.matchType == 'left')
+        if(StringUtils.isNotBlank(${model.modelL}Condition.get${field.fieldUp}())){
+            sb.append(" and model.${field.field} like :${field.field} ");
+            params.put("${field.field}",${model.modelL}Condition.get${field.fieldUp}()+"%");
+        }
+#elseif($field.matchType == 'right')
+        if(StringUtils.isNotBlank(${model.modelL}Condition.get${field.fieldUp}())){
+            sb.append(" and model.${field.field} like :${field.field} ");
+            params.put("${field.field}","%"+${model.modelL}Condition.get${field.fieldUp}());
+        }
+#end
+#else
+#if($field.matchType != 'none')
+        if(${model.modelL}Condition.get${field.fieldUp}()!=null){
+            sb.append(" and model.${field.field} = :${field.field} ");
+            params.put("${field.field}",${model.modelL}Condition.get${field.fieldUp}());
+        }
+#end
+#end
+#end
+        return queryByJpql(sb.toString(), params);
+    }
+    
+    
+    @Override 
+    public Page< Map<String,Object>> listBySql(${model.model}Condition condition,Pageable pageable){
+        StringBuffer sb=new StringBuffer("select #foreach($field in $fieldList)#if($!{velocityCount}!=1),#end${field.columnName}#end from ${model.tableName}  where 1=1  ");
+        Map<Integer,Object> params = new HashMap<Integer,Object>();
+#foreach($field in $fieldList)
+#if($field.type=="String")
+#if($field.matchType == 'any')
+        if(StringUtils.isNotBlank(condition.get${field.fieldUp}())){
+            sb.append(" and ${field.columnName} like ?$!{velocityCount} ");
+            params.put($!{velocityCount},"%"+condition.get${field.fieldUp}()+"%");
+        }
+#elseif($field.matchType == 'eq')
+        if(StringUtils.isNotBlank(condition.get${field.fieldUp}())){
+            sb.append(" and ${field.columnName} = ?$!{velocityCount} ");
+            params.put($!{velocityCount},condition.get${field.fieldUp}());
+        }
+#elseif($field.matchType == 'left')
+        if(StringUtils.isNotBlank(condition.get${field.fieldUp}())){
+            sb.append(" and ${field.columnName} like ?$!{velocityCount} ");
+            params.put($!{velocityCount},condition.get${field.fieldUp}()+"%");
+        }
+#elseif($field.matchType == 'right')
+        if(StringUtils.isNotBlank(condition.get${field.fieldUp}())){
+            sb.append(" and ${field.columnName} like ?$!{velocityCount} ");
+            params.put($!{velocityCount},"%"+condition.get${field.fieldUp}());
+        }
+#elseif($field.matchType == 'dateRange')
+        if(condition.get${field.fieldUp}Begin()!=null){
+            sb.append(" and ${field.columnName} >= ?$!{velocityCount} ");
+            params.put($!{velocityCount},condition.get${field.fieldUp}Begin());
+        }
+        if(condition.get${field.fieldUp}End()!=null){
+            sb.append(" and ${field.columnName} >= ?$!{velocityCount} ");
+            params.put($!{velocityCount},condition.get${field.fieldUp}End());
+        }
+#end
+#else
+#if($field.matchType != 'none')
+        if(condition.get${field.fieldUp}()!=null){
+            sb.append(" and ${field.columnName} = ?$!{velocityCount} ");
+            params.put($!{velocityCount},condition.get${field.fieldUp}());
+        }
+#end
+#end
+#end
+        return queryFieldsBySql(sb.toString(), params, pageable);
+    }
+    
+    @Override 
+    public ${model.model} findBy(String field,Object value){
+        StringBuffer sb=new StringBuffer("select model from ${model.model} model  where model.");
+        sb.append(field);
+        sb.append(" = :value ");
+        Map<String,Object> params = new HashMap<String,Object>();
+        params.put("value",value);
+        List<${model.model}> result = queryByJpql(sb.toString(), params,0l,1l);
+        return result.isEmpty() ? null : result.get(0);
+    }
+    
+    @Override 
+    public List<${model.model}> findAllBy(String field,Object value){
+        StringBuffer sb=new StringBuffer("select model from ${model.model} model  where model.");
+        sb.append(field);
+       sb.append(" = :value ");
+        Map<String,Object> params = new HashMap<String,Object>();
+        params.put("value",value);
+        return queryByJpql(sb.toString(), params);
+    }
+    
+    
+}

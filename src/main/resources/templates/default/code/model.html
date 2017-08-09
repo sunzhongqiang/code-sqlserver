@@ -1,0 +1,59 @@
+package ${project.group}.${project.module}.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
+#foreach( $key in $importList.keySet() )
+$importList.get($key)
+#end
+
+/**
+*@Title: ${project.model.model}
+*@Description: ${project.model.comment} 数据领域模型
+*@author code generator
+*@version 1.0
+*@date ${date}
+*/
+@Entity
+@Table(name = "${project.model.table}")
+public class ${project.model.model} {
+#foreach($field in $project.fieldList)
+#if(${field.isPk}=='Y')
+    /**
+     * ${field.comment}
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="${field.column}"#if(${field.length}&&${field.length}<2147483640),length=${field.length}#end ,columnDefinition="COMMENT '${field.comment}'")
+    private ${field.type} ${field.field};
+#else
+    /**
+     * ${field.comment}
+     */
+#if(${field.type} == "Date")
+    @Temporal(TemporalType.TIMESTAMP)   
+#end
+    @Column(name="${field.column}" #if(${field.length}&&${field.length}<2147483640),length=${field.length}#end ,columnDefinition="COMMENT '${field.comment}'")
+    private ${field.type} ${field.field};
+#end
+
+#end
+
+#foreach($field in $project.fieldList)
+    /** 
+	* @return ${field.field} ：${field.comment}
+	*/
+    public ${field.type} get${field.fieldUp}() {
+        return ${field.field};
+    }
+    /** 
+    * @param ${field.field} 设置${field.comment} 
+    */
+    public void set${field.fieldUp}(${field.type} ${field.field}) {
+        this.${field.field} = ${field.field};
+    }
+#end
+}

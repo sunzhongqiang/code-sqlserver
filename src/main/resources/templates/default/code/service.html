@@ -1,0 +1,98 @@
+package ${project.group}.${project.module}.service;
+
+import java.util.List;
+import com.echin.base.service.BaseService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import ${project.group}.${project.module}.model.${project.model.model};
+import ${project.group}.${project.module}.condition.${project.model.model}Condition;
+
+/**
+*@Title: ${project.model.model}Service
+*@Description: ${project.model.comment} 业务服务层接口
+*@author code generator
+*@version 1.0
+*@date ${date}
+*/
+public interface ${project.model.model}Service extends BaseService<${project.model.model}, ${PK}> {
+    /**
+     * 生成的列表分页查询方法
+     * @param ${project.model.modelL}Condition  查询条件
+     * @param pageable 分页参数
+     * @return 分页返回查询的结果
+     * @author code generator
+     * @date ${date}
+     */
+    Page<${project.model.model}> list(${project.model.model}Condition ${project.model.modelL}Condition, Pageable pageable);
+    
+    /**
+     * 不分页查询相关信息，根据传入的model类对象取得查询结果集List
+     * @param bean ${project.model.model}类
+     * @return List<${project.model.model}> 查询的结果集
+     * @author code generator
+     * @date ${date}
+     */
+    public List<${project.model.model}> list(${project.model.model}Condition ${project.model.modelL});
+
+#foreach($field in ${project.fieldList})
+#if($field.exists)
+    /**
+     * 是否存在该
+     * @param ${field.field} ${field.comment}
+     * @return 如果存在的话返回true ,没有的返回false
+     * @author code generator
+     * @date ${date}
+     */
+    boolean exists${field.fieldUp}(${field.type} ${field.field});
+#end
+#if($field.findBy)
+    /**
+     * 根据给定的字段返回符合的对象
+     * @param ${field.field} ${field.comment}
+     * @return 符合条件的唯一对象
+     * @author code generator
+     * @date ${date}
+     */
+    ${project.model.model} findBy${field.fieldUp}(${field.type} ${field.field});
+#end
+#if($field.findAllBy)
+    /**
+     * 根据字段获取所有符合的记录
+     * @param ${field.field} ${field.comment}
+     * @return 符合条件的所有对象
+     * @author code generator
+     * @date ${date}
+     */
+    List<${project.model.model}> findAllBy${field.fieldUp}(${field.type} ${field.field});
+    /**
+     * 根据字段获取所有符合的记录
+     * @param ${field.field} ${field.comment}
+     * @param Pageable pageable 分页参数
+     * @return 符合条件的所有对象
+     * @author code generator
+     * @date ${date}
+     */
+    Page<${project.model.model}> findAllBy${field.fieldUp}(${field.type} ${field.field}, Pageable pageable);
+#end
+#end
+
+    /**
+     * 根据给定的字段和属性值，获得符合条件的第一个结果
+     * @param field ${project.model.model} 中的某个字段
+     * @return ${project.model.model} 返回符合条件的结果，如果没有返回null
+     * @author code generator
+     * @date ${date}
+     * 
+     */
+    ${project.model.model} findBy(String field,Object value);
+    
+    /**
+     * 根据给定的字段和属性值，获得符合条件的所有结果
+     * @param field ${project.model.model} 中的某个字段
+     * @return List<${project.model.model}> 返回符合条件的所有结果
+     * @author code generator
+     * @date ${date}
+     * 
+     */
+    List<${project.model.model}> findAllBy(String field,Object value);
+}

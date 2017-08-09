@@ -1,0 +1,54 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DbStore",
+        "storeId": "DbStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "8a0ded34-5512-463f-944e-1bf7f017d324",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "http://localhost:10001/db"
+            },
+            "name": "MyAjaxProxy1",
+            "designerId": "a8c0b134-a218-401b-bdb4-b17cf76210c8",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader1",
+                    "designerId": "5a419e96-b968-42c5-afba-8ca763dccfcb"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "SCHEMA_NAME"
+            },
+            "name": "MyField2",
+            "designerId": "a9d50c2f-16b0-4b73-b69b-5fc458487f2f"
+        }
+    ]
+}

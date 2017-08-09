@@ -1,0 +1,54 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "table",
+        "designer|userClassName": "Table"
+    },
+    "designerId": "2f5732f7-47f9-4036-a0d1-8688eb4a60cc",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyInteger",
+            "designerId": "08bfa860-cfe5-420c-9ef3-0538b60fc16d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tableName"
+            },
+            "name": "MyField",
+            "designerId": "322039d3-41bb-4283-9418-680b04c947c8"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField1",
+            "designerId": "2eb06246-16bb-4179-8074-6daf6d4c7d6a"
+        }
+    ]
+}

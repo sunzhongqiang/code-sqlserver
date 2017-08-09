@@ -1,0 +1,71 @@
+package ${project.group}.${project.module}.dao;
+
+import java.util.List;
+import java.util.Map;
+import com.echin.base.dao.SpringDataQueryDao;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import ${project.group}.${project.module}.condition.${project.model.model}Condition;
+import ${project.group}.${project.module}.model.${project.model.model};
+/**
+*@Title: ${project.model.model}Dao
+*@Description: ${project.model.comment} 数据持久层接口
+*@author code generator
+*@version 1.0
+*@date ${date}
+* Modified By
+* Modified Date
+*/
+public interface ${project.model.model}Dao extends SpringDataQueryDao<${project.model.model}>{
+    
+    /**
+     * 分页查询相关信息，根据传入的bean类对象和分页对象page取得查询结果集List
+     * @param model ${project.model.model}类
+     * @param page 传入的分页对象
+     * @return Page<${project.model.model}> 查询的结果集
+     * @author code generator
+     * @date ${date}
+     * 
+     */
+    Page<${project.model.model}> list(${project.model.model}Condition ${project.model.modelL},Pageable pageable);
+    /**
+     * 不分页查询相关信息，根据传入的model类对象取得查询结果集List
+     * @param bean ${project.model.model}类
+     * @return List<${project.model.model}> 查询的结果集
+     * @author code generator
+     * @date ${date}
+     */
+    List<${project.model.model}> list(${project.model.model}Condition ${project.model.modelL});
+    /**
+     * 使用sql查询，并以map和分页的形式进行返回数据结果
+     * @param model ${project.model.model}类
+     * @param page 传入的分页对象
+     * @return Page<${project.model.model}> 查询的结果集
+     * @author code generator
+     * @date ${date}
+     * 
+     */
+    Page< Map<String,Object>> listBySql(${project.model.model}Condition ${project.model.modelL},Pageable pageable);
+    
+    /**
+     * 根据给定的字段和属性值，获得符合条件的第一个结果
+     * @param field ${project.model.model} 中的某个字段
+     * @return ${project.model.model} 返回符合条件的结果，如果没有返回null
+     * @author code generator
+     * @date ${date}
+     * 
+     */
+    ${project.model.model} findBy(String field,Object value);
+    
+    /**
+     * 根据给定的字段和属性值，获得符合条件的所有结果
+     * @param field ${project.model.model} 中的某个字段
+     * @return List<${project.model.model}> 返回符合条件的所有结果
+     * @author code generator
+     * @date ${date}
+     * 
+     */
+    List<${project.model.model}> findAllBy(String field,Object value);
+    
+
+}

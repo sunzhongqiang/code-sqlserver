@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>${model.comment}</title>
+        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+        <link href="/css/DD.css" rel="stylesheet" type="text/css" />
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="/css/base.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="/js/jquery-1.8.1.min.js"></script>
+    </head>
+    <body>
+        <!--主体-->
+        <div class="use_main">
+            <!--搜索框-->
+            <form id="admin_t" class="form_all" method="get" action="/${model.modelL}/list">
+                <dl>
+                <dd>
+                    <ul>
+                        <li>
+#foreach( $field in $fieldList )
+#if($field.match != "none")
+                            <span>${field.comment}：</span><input type="text" name="${field.field}" th:value="${${model.modelL}Condition} ? ${${model.modelL}Condition.${field.field}} :''"/>
+#end
+#end
+                            <button type="submit" id="btnSearch" class="button button-primary btn_ser">查询</button>
+                            <button type="reset" class="button button-primary btn_ser">清空</button>
+                        </li>
+                    </ul> 
+                </dd>
+                </dl> 
+            </form>
+         </div>
+         <div class="use_main top_10">
+            <!--搜索框结束-->
+            <div class="clr"></div>
+            <div style="width: 100%; left: 0px; top: 0px; height: 100%; display: none; position: fixed;" class="bui-ext-mask"></div>
+            <!--添加-->
+            <div class="user-add">
+                <ul>
+                    <li class="add_button">
+                        <a class="add_admin" href="/${model.modelL}/add">添加</a>
+                    </li>
+                </ul>
+            </div>
+            <!--添加按钮结束-->   
+            <!--list-->
+            <table class="tit_all" border="0" cellpadding="5" cellspacing="1">
+                <thead>             
+                    <th>序号</th> 
+#foreach( $field in $fieldList )
+#if($field.listShow == true)
+                    <th>${field.comment}</th>
+#end
+#end
+                    <th>操作</th>                 
+                </thead>    
+                <tbody th:remove="all-but-first">
+                    <tr class="info" id="info" th:each="${model.modelL}:${page.content}">
+                        <td th:text="${${model.modelL}Stat.count+page.number*page.size}"></td>
+#foreach( $field in $fieldList )
+#if($field.listShow == true)
+                        <td th:text="${${model.modelL}.${field.field}}"></td>
+#end
+#end
+                        <td class="caozuo">
+                            <a class="edit" th:href="@{/${model.modelL}/details(${pkField}=${${model.modelL}.${pkField}})}">详情</a>
+                            <a class="edit" th:href="@{/${model.modelL}/edit(${pkField}=${${model.modelL}.${pkField}})}">修改</a>
+                            <a class="delete" th:href="@{/${model.modelL}/delete(${pkField}=${${model.modelL}.${pkField}})}" onclick="return confirm('确定要删除吗？')" style="color:red">删除</a>
+                        </td>
+                    </tr> 
+                </tbody>
+             </table>
+             <!-- 分页 -->
+            <div class="pages" th:include="page::page(${page},'',${params})"></div>
+            <!-- 分页 结束  -->
+        </div>
+        <script type="text/javascript" src="/js/${model.modelL}/list.js"></script>
+    </body>
+</html>

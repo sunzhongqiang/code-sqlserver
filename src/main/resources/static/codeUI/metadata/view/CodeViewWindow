@@ -1,0 +1,249 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "codeviewwindow",
+        "designer|userClassName": "CodeViewWindow",
+        "height": 563,
+        "layout": "fit",
+        "title": "代码预览",
+        "width": 920
+    },
+    "name": "MyWindow",
+    "designerId": "41d86a7b-93b1-4024-8d90-00a426943725",
+    "viewControllerInstanceId": "94b65d95-c5e3-4e2e-8bfe-2e6397339325",
+    "viewModelInstanceId": "31b7fb20-53c2-4752-9e23-43410686aed2",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "tabPosition": "bottom",
+                "title": ""
+            },
+            "name": "MyTabPanel1",
+            "designerId": "86adcbf4-7676-4cd6-9d79-75f575b21c75",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/preview/model\" width=\"100%\" height=\"100%\"></iframe>",
+                        "scrollable": null,
+                        "title": "Model"
+                    },
+                    "name": "MyPanel4",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "86063156-9f43-4376-8820-b4449433ed25",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig4",
+                            "designerId": "629a7ae2-20be-4700-b539-9ccdbf5505a5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/preview/condition\" width=\"100%\" height=\"100%\"></iframe>",
+                        "scrollable": null,
+                        "title": "Condition"
+                    },
+                    "name": "MyPanel",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "6c5cc109-23b1-4bff-a7ae-cfa1645b9278",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig4",
+                            "designerId": "20139b11-d3e1-42ce-969c-794c3a43a4b4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/preview/dao\" width=\"100%\" height=\"100%\"></iframe>",
+                        "scrollable": null,
+                        "title": "Dao"
+                    },
+                    "name": "MyPanel9",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "8e0c88fb-d574-4f62-89b0-5faeccab2517",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig8",
+                            "designerId": "9a03cb1b-77d8-4317-893c-fa1c6a0d48f1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/preview/daoImpl\" width=\"100%\"  height=\"100%\"></iframe>",
+                        "scrollable": null,
+                        "title": "DaoImpl"
+                    },
+                    "name": "MyPanel10",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "4f1fe08f-69b7-48ac-9bd2-be240f5cd3cc",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig9",
+                            "designerId": "56d76241-7a18-4846-91b0-2aa30c59d36f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/preview/service\" width=\"100%\"  height=\"100%\"></iframe>",
+                        "scrollable": null,
+                        "title": "Service"
+                    },
+                    "name": "MyPanel6",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "886335ff-3bdf-44cb-81fb-d8aa5a14541b",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig5",
+                            "designerId": "1a24c9ec-8116-44e3-9b5f-c1a8baefbcc1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/preview/serviceImpl\" width=\"100%\"  height=\"100%\"></iframe>",
+                        "scrollable": null,
+                        "title": "ServiceImpl"
+                    },
+                    "name": "MyPanel7",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "e591a439-fe29-4b39-beef-61f77eace4f6",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig6",
+                            "designerId": "88a44cca-5735-4314-b2df-fc4caed3e9cf"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/preview/controller\" width=\"100%\"  height=\"100%\"></iframe>",
+                        "scrollable": null,
+                        "title": "Controller"
+                    },
+                    "name": "MyPanel8",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "df4d356d-bde3-4e04-aeca-028521923ea8",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig7",
+                            "designerId": "bac41024-6a6b-4e0c-af4c-537c170732b3"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

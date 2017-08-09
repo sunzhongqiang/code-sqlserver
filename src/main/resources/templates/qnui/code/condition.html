@@ -1,0 +1,86 @@
+/*
+ * 
+ *  ${model.model}Condition 创建于 ${date} 版权归作者和作者当前组织所有
+ */
+package ${model.packageName}.${model.modulePackage}.condition;
+import java.util.Date;
+import ${model.packageName}.${model.modulePackage}.model.${model.model};
+
+/**
+* ${model.model}Condition ： ${model.comment} 扩展查询模型
+* ${date}
+*@author ${model.author}
+*@version 1.0
+*
+*/
+public class ${model.model}Condition extends ${model.model}{
+
+#foreach($field in $fieldList)
+#if(${field.matchType}=='dateRange')
+    private ${field.type} ${field.field}Begin;
+    private ${field.type} ${field.field}End;
+#end
+#if(${field.matchType}=='numberRange')
+    private ${field.type} ${field.field}Begin;
+    private ${field.type} ${field.field}End;
+#end
+#end
+
+#foreach($field in $fieldList)
+#if(${field.matchType}=='dateRange')
+    /** 
+    * @return ${field.field}Begin ：${field.comment}
+    */
+    public ${field.type} get${field.fieldUp}Begin() {
+        return ${field.field}Begin;
+    }
+    /** 
+    *@param ${field.field}Begin 设置${field.comment} 开始
+    */
+    public void set${field.fieldUp}Begin(${field.type} ${field.field}Begin) {
+        this.${field.field}Begin = ${field.field}Begin;
+    }
+    
+     /** 
+    * @return ${field.field}End ：${field.comment}
+    */
+    public ${field.type} get${field.fieldUp}End() {
+        return ${field.field}End;
+    }
+    /** 
+    *@param ${field.field}End 设置${field.comment} 开始
+    */
+    public void set${field.fieldUp}End(${field.type} ${field.field}End) {
+        this.${field.field}End = ${field.field}End;
+    }
+#end
+#if(${field.matchType}=='numberRange')
+    /** 
+    * @return ${field.field}Begin ：${field.comment}
+    */
+    public ${field.type} get${field.fieldUp}Begin() {
+        return ${field.field}Begin;
+    }
+    /** 
+    *@param ${field.field}Begin 设置${field.comment} 开始
+    */
+    public void set${field.fieldUp}Begin(${field.type} ${field.field}Begin) {
+        this.${field.field}Begin = ${field.field}Begin;
+    }
+    
+     /** 
+    * @return ${field.field}End ：${field.comment}
+    */
+    public ${field.type} get${field.fieldUp}End() {
+        return ${field.field}End;
+    }
+    /** 
+    *@param ${field.field}End 设置${field.comment} 开始
+    */
+    public void set${field.fieldUp}End(${field.type} ${field.field}End) {
+        this.${field.field}End = ${field.field}End;
+    }
+#end
+#end
+
+}

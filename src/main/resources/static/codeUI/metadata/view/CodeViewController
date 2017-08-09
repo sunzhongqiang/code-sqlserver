@@ -1,0 +1,72 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "code",
+        "designer|userClassName": "CodeViewController"
+    },
+    "designerId": "3eecb58f-5a0b-4146-a927-e5f8afa0fb12",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "fields"
+                ],
+                "fn": "buildData",
+                "implHandler": [
+                    "var validate = true;",
+                    "var message = \"\";",
+                    "var projectform = this.getReferences().projectForm;",
+                    "var tableform = this.getReferences().tableForm;",
+                    "",
+                    "if(!projectform.isValid()){",
+                    "    validate = false;",
+                    "    message += \"项目配置有误<br/>\";",
+                    "}",
+                    "if(!tableform.isValid()){",
+                    "    validate = false;",
+                    "    message += \"模型参数有误<br/>\";",
+                    "}",
+                    "",
+                    "var columns = Ext.getStore(\"ColumnStore\").getData();",
+                    "",
+                    "",
+                    "var projectData = projectform.getValues();",
+                    "var tableData = tableform.getValues();",
+                    "var data = {};",
+                    "",
+                    "data.project = projectData;",
+                    "data.model = tableData;",
+                    "",
+                    "data.fieldList = [];",
+                    "",
+                    "columns.each(function(item,index,len){",
+                    "",
+                    "    if(item.get(\"COMMENTS\")===null||item.get(\"COMMENTS\")=== 'undefined' || item.get(\"COMMENTS\") ==='' ){",
+                    "        message +=  \"字段：\"+item.get(\"FIELD_NAME\") + \"的注释没有写<br/>\";",
+                    "        validate = false;",
+                    "    }",
+                    "    var field = item.getData();",
+                    "    field.id = \"\";",
+                    "    data.fieldList.push(field);",
+                    "});",
+                    "",
+                    "",
+                    "return {params:data,validate:validate,message:message};"
+                ]
+            },
+            "name": "buildData",
+            "designerId": "3e775b80-28ae-4119-b893-44ac8b8998c7"
+        }
+    ]
+}

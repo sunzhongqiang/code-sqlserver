@@ -1,0 +1,248 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pageviewwindow",
+        "designer|userClassName": "PageViewWindow",
+        "height": 762,
+        "layout": "fit",
+        "title": "页面预览",
+        "width": 918
+    },
+    "name": "MyWindow",
+    "designerId": "9b15070e-a820-497c-95a1-42af7f76f375",
+    "viewControllerInstanceId": "99904f96-fc85-455f-9b33-98e45f9f93ac",
+    "viewModelInstanceId": "75136ef9-e06f-45d1-aaa9-1cc7ff451ae7",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "tabPosition": "bottom",
+                "title": ""
+            },
+            "name": "MyTabPanel2",
+            "designerId": "8a79865c-c05e-45db-8dda-5c25e0413101",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": [
+                            "{list}"
+                        ],
+                        "title": "查询列表页面"
+                    },
+                    "name": "MyPanel13",
+                    "configAlternates": {
+                        "html": "binding"
+                    },
+                    "designerId": "a20aaa7c-3b07-41e4-8e91-0c7fc4b50413",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig14",
+                            "designerId": "9d60fc9f-086d-4979-9b99-907ad661d107"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": [
+                            "{form}"
+                        ],
+                        "title": "编辑页面"
+                    },
+                    "name": "MyPanel12",
+                    "configAlternates": {
+                        "html": "binding"
+                    },
+                    "designerId": "251f5b67-634f-4819-858f-b9813604a7ad",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig12",
+                            "designerId": "d576d503-c199-4458-8d32-fe80be9aeac8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": [
+                            "{details}"
+                        ],
+                        "title": "详细页面"
+                    },
+                    "name": "MyPanel11",
+                    "configAlternates": {
+                        "html": "binding"
+                    },
+                    "designerId": "ed7e6b74-7917-4340-92cd-af86205d0047",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig13",
+                            "designerId": "297a9824-d5e7-4ca3-b03b-652f1ea16fce"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/previewHtml/list\" width=\"100%\"  height=\"100%\"></iframe>",
+                        "title": "查询列表页面Code"
+                    },
+                    "name": "MyPanel1",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "0b22af1a-bbe7-4658-b44e-6f58f75e052f",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig14",
+                            "designerId": "b80bd466-43c8-4967-9f2c-f264466aec13"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/previewHtml/form\" width=\"100%\"  height=\"100%\"></iframe>",
+                        "title": "编辑页面Code"
+                    },
+                    "name": "MyPanel2",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "057add4b-5d4d-44c9-a4be-c74ea8e5d98e",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "bc744116-1f6e-4656-9c6e-d1cd2904cd07"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/previewHtml/details\" width=\"100%\"  height=\"100%\"></iframe>",
+                        "title": "详细页面Code"
+                    },
+                    "name": "MyPanel5",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "24185c52-a902-4489-a3bd-a39971cce348",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig13",
+                            "designerId": "a145c37c-0b13-402d-803f-c14a3547e8ec"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<iframe src=\"/code/preview/validateJs\" width=\"100%\"  height=\"100%\"></iframe>",
+                        "title": "校验JsCode"
+                    },
+                    "name": "MyPanel14",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "11b948b9-8d00-4c2e-9440-692a9d3f2e22",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig13",
+                            "designerId": "2c80eff6-f4df-4283-9b9f-c411f2647bd5"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

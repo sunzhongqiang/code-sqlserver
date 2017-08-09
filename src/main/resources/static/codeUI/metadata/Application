@@ -1,0 +1,64 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "SERVER": "",
+        "models": [
+            "Table",
+            "Project"
+        ],
+        "name": "Code",
+        "stores": [
+            "TableTreeStore",
+            "DbStore",
+            "ColumnStore",
+            "TypeStore",
+            "InputTypeStore",
+            "ValidateStore",
+            "MatchStore",
+            "ProjectStore",
+            "TemplateStore"
+        ],
+        "views": [
+            "Code",
+            "CodeViewWindow",
+            "PageViewWindow",
+            "Project",
+            "ProjectForm",
+            "CodeViewport",
+            "ProjectView",
+            "Login"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "SERVER",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "SERVER='http://localhost:10001';"
+                ]
+            },
+            "name": "launch",
+            "designerId": "b522cec8-d7a7-4e0e-9dbf-87bb3de61818"
+        }
+    ]
+}
